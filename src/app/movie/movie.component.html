@@ -1,0 +1,33 @@
+<form action="" class="search-form">
+  <div class="form-group">
+    <input type="text"  class="form-control" placeholder="search movie"
+    [(ngModel)]="keyword" name="keyword" (keyup)="findMovie()">
+  </div>
+</form>
+<div class="container" *ngIf='movie'>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>{{movie.original_title}}</h2>
+      <h2>{{movie.original_language}}</h2>
+      <h3> Genres: </h3>
+     <h4> <ng-container *ngFor='let genre of movie.genres'>
+       <span class="badge badge-primary"> {{genre.name}} </span>
+      </ng-container></h4>
+      <h3>Released : {{movie.release_date }}</h3>
+      <h4>Status: {{movie.status   }}</h4>
+      <h4>Duration:{{movie.runtime}} min  </h4>
+      <ng-container *ngFor='let lang of movie.spoken_languages'>
+        Language: {{lang.name}}
+        
+        </ng-container>
+      <p>
+        {{movie.overview}}
+      </p>
+      <p> Rating :{{movie.vote_average}}</p>
+      <p> Tagline: {{movie.tagline}}</p>
+    
+
+    </div>
+  </div>
+
+</div>

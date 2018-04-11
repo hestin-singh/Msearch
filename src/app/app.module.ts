@@ -3,16 +3,24 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MovieComponent } from './movie/movie.component';
+import { MservService } from './mserv.service';
+import { HttpModule } from '@angular/http';
+import { FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovieComponent
+  
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [MservService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
